@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div id="form1">
+    <form method="post" action="{% url 'bankapp:form' %}">
+        {% csrf_token %}
+        <table>
+  <tr>
+    <td><label for="name">Name:</label></td>
+    <td><input type="text" name="name" id="name" placeholder="your name"></td>
+  </tr>
+  <tr>
+    <td><label for="dob">DOB:</label></td>
+    <td><input type="date" name="dob" id="dob" placeholder="DOB"></td>
+  </tr>
+  <tr>
+    <td><label >Age:</label></td>
+    <td><input type="number" name="age" id="number" placeholder="Age"></td>
+  </tr>
+  <tr>
+    <td><label >Gender:</label></td>
+    <td>Male: <input type="radio" name="gender" value="male">
+      Female: <input type="radio" name="gender" value="female">
+      Transgender: <input type="radio" name="gender" value="Transgender"></td>
+  </tr>
+  <tr>
+    <td><label for="phoneNumber">Phone Number:</label></td>
+    <td><input type="number" name="phoneNumber" id="phoneNumber"></td>
+  </tr>
+  <tr>
+    <td><label for="email">Email:</label></td>
+    <td><input type="text" name="email" id="email" placeholder="your email"></td>
+  </tr>
+  <tr>
+    <td><label for="address">Address:</label></td>
+    <td><textarea name="address" id="address" placeholder="Address"></textarea></td>
+  </tr>
+
+
+  <tr>
+    <td><label for="district">District</label></td>
+    <td>
+      <select name="district" id="district" class="district-dropdown">
+        <option value="">--Select District--</option>
+        <option value="Thrissur">Thrissur</option>
+        <option value="Ernamkulam">Ernamkulam</option>
+        <option value="Palakkad">Palakkad</option>
+        <option value="Kottayam">Kottayam</option>
+        <option value="Trivandrum">Trivandrum</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td> <label for="branch">Branch:</label></td>
+    <td>
+      <select id="branch" name="branch" class="branch-dropdown">
+        <option value="">--Select Branch--</option>
+      </select></td>
+  </tr>
+  <tr>
+    <td><label for="Account">Account Type</label></td>
+    <td>
+      <select id="account" name="account">
+        <option value="">Choose</option>
+        <option value="Savings">Savings</option>
+        <option value="Current">Current</option>
+      </select></td>
+  </tr>
+  <tr>
+    <td><label>Materials Provided :</label></td>
+    <td>
+      <input type="checkbox" id="debit" name="materials" value="Debit Card">
+      <label for="debit">Debit Card</label>
+      <input type="checkbox" id="credit" name="materials" value="Credit Card">
+      <label for="credit">Credit Card</label>
+      <input type="checkbox" id="cheque" name="materials" value="Chequebook">
+      <label for="debit">Cheque Book</label></td>
+  </tr>
+  <tr div class="button">
+    <td colspan="2"><input type="submit" class="submit" value="Register" onclick="return formValidation()" /></td>
+  </tr>
+</table>
+</form>
+</div>
+{% endblock %}

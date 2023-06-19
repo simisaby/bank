@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<a href="{% url 'bankapp:form' %}">Form</a>
+<style>
+    a{
+        text-decoration:None;
+        border:1px solid black;
+        padding:3px;
+    }
+</style>
+
+{% endblock %}
